@@ -1,0 +1,11 @@
+# Normalize line endings to LF in the repo, CRLF on Windows checkout
+* text=auto eol=lf
+
+# Shell scripts must be LF — CRLF breaks bash on Railway/Docker
+*.sh text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff2 binary
