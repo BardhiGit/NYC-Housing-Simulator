@@ -10,8 +10,9 @@ A full-stack financial analysis platform built specifically for NYC multifamily 
 
 ## Live Demo
 
-> Backend: [Railway deployment link]  
-> Frontend: [Vercel deployment link]  
+> **GitHub:** https://github.com/BardhiGit/NYC-Housing-Simulator  
+> Backend: [Deploy to Railway — see setup below]  
+> Frontend: [Deploy to Vercel — see setup below]  
 >
 > Demo credentials: `demo@strataview.nyc` / `demo1234`  
 > Three pre-loaded NYC properties with deliberate stories — log in and run the analysis.
