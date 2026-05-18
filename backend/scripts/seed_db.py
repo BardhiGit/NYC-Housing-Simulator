@@ -16,6 +16,7 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
 from app.core.config import settings
@@ -33,6 +34,12 @@ async def seed():
     SessionLocal = async_sessionmaker(bind=engine, class_=AsyncSession, expire_on_commit=False)
 
     async with SessionLocal() as db:
+        existing = await db.scalar(select(User).where(User.email == "demo@strataview.nyc"))
+        if existing:
+            print("Demo data already seeded — skipping.")
+            await engine.dispose()
+            return
+
         # Create demo user
         demo_user = User(
             email="demo@strataview.nyc",
